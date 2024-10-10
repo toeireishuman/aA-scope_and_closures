@@ -23,12 +23,20 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 ***********************************************************************/
 
 function lazyAdder(firstNum) {
-  // Your code here
+	let sum = firstNum;
+
+	return number => {
+		sum += number;
+		return number => {
+			sum += number;
+			return sum;
+		};
+	};
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
-  module.exports = lazyAdder;
+	module.exports = lazyAdder;
 } catch (e) {
-  return null;
+	return null;
 }
