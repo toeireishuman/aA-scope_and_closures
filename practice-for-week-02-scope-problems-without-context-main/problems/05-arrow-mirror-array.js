@@ -8,12 +8,16 @@ mirrorArray([1,2,3]); // => [ 1, 2, 3, 3, 2, 1 ]
 mirrorArray(['a', 'b', 'c', 'd']); // => [ 'a', 'b', 'c', 'd', 'd', 'c', 'b', 'a' ]
 ***********************************************************************/
 
-const mirrorArray = (array) => {
-  // Your code here
+const mirrorArray = array => {
+	const mirrored = [];
+
+	array.forEach(element => mirrored.unshift(element));
+
+	return [...array, ...mirrored];
 };
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
-  module.exports = mirrorArray;
+	module.exports = mirrorArray;
 } catch (e) {
-  return null;
+	return null;
 }
