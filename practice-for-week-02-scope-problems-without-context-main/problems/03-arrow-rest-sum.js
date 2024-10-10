@@ -11,12 +11,12 @@ arrowRestSum(0); // => 0
 ***********************************************************************/
 
 const arrowRestSum = (...otherNums) => {
-  // Your code here
+	return otherNums.reduce((accumulator, current) => accumulator + current, 0);
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
-  module.exports = arrowRestSum;
+	module.exports = arrowRestSum;
 } catch (e) {
-  return null;
+	return null;
 }
