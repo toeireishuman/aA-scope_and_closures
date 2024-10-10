@@ -24,15 +24,21 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 
 function lazyAdder(firstNum) {
 	let sum = firstNum;
+	return number1 => number2 => number1 + number2 + sum;
 
-	return number => {
-		sum += number;
-		return number => {
-			sum += number;
-			return sum;
-		};
-	};
+	// return number => {
+	// 	sum += number;
+	// 	return number => {
+	// 		sum += number;
+	// 		return sum;
+	// 	};
+	// };
 }
+
+let firstAdd = lazyAdder(1);
+let secondAdd = firstAdd(2);
+let sum = secondAdd(3);
+console.log(sum); // prints 6
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
