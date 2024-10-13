@@ -43,11 +43,22 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 ***********************************************************************/
 
 function curriedSum(numArgs) {
-  // Your code here
+	const addends = [];
+
+	return function lazyAdder(addend) {
+		addends.push(addend);
+		if (addends.length < numArgs) {
+			return lazyAdder;
+		} else {
+			const sum = addends.reduce((accum, current) => accum + current, 0);
+			return sum;
+		}
+	};
 }
+
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
-  module.exports = curriedSum;
+	module.exports = curriedSum;
 } catch (e) {
-  return null;
+	return null;
 }
