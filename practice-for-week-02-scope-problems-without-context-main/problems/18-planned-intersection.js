@@ -16,12 +16,21 @@ console.log(fame(["a", "f", "z", "b"])); // returns [ 'f', 'a' ]
 *******************************************************************************/
 
 function plannedIntersect(firstArr) {
-  // Your code here
+	const common = [];
+	return secondArr => {
+		secondArr.forEach(element => {
+			if (firstArr.includes(element)) {
+				common.push(element);
+			}
+		});
+
+		return common;
+	};
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*************************/
 try {
-  module.exports = plannedIntersect;
+	module.exports = plannedIntersect;
 } catch (e) {
-  return null;
+	return null;
 }
