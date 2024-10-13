@@ -35,11 +35,6 @@ function lazyAdder(firstNum) {
 	// };
 }
 
-let firstAdd = lazyAdder(1);
-let secondAdd = firstAdd(2);
-let sum = secondAdd(3);
-console.log(sum); // prints 6
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
 	module.exports = lazyAdder;
